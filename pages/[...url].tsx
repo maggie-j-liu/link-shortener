@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
   return {
     redirect: {
-      destination: data.url + (params.length ? params.join("/") : ""),
+      destination: data.url + (params.length ? "/" + params.join("/") : ""),
       permanent: false,
     },
   };
