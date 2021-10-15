@@ -6,6 +6,7 @@ export default function Url() {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   let params = context.params?.url;
+  console.log(params);
   if (!params) {
     return {
       notFound: true,
