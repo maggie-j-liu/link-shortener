@@ -2,8 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
@@ -12,6 +12,7 @@ generator client {
 }
 
 model Link {
-  slug String @id
-  url  String
+  slug    String @id
+  url     String
+  addedBy BigInt @default(0)
 }
