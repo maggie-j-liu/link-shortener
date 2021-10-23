@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Link" ALTER COLUMN "addedBy" SET DEFAULT E'',
+ALTER COLUMN "addedBy" SET DATA TYPE TEXT;

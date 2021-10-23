@@ -14,5 +14,5 @@ generator client {
 model Link {
   slug    String @id
   url     String
-  addedBy BigInt @default(0)
+  addedBy String @default("")
 }
