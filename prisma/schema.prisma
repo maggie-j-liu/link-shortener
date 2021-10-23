@@ -12,7 +12,9 @@ generator client {
 }
 
 model Link {
-  slug    String @id
+  slug    String  @id
   url     String
-  addedBy String @default("")
+  addedBy String  @default("")
+  clicks  Int     @default(0)
+  public  Boolean @default(false)
 }
