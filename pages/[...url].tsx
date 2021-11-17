@@ -6,7 +6,7 @@ export default function Url() {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   let params = context.params?.url;
-  console.log(params);
+  //console.log(params);
   if (!params) {
     return {
       notFound: true,
@@ -25,6 +25,18 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return {
       notFound: true,
     };
+  }
+  if (process.env.NODE_ENV === "production") {
+    await prisma.link.update({
+      where: {
+        slug: key,
+      },
+      data: {
+        clicks: {
+          increment: 1,
+        },
+      },
+    });
   }
   return {
     redirect: {
